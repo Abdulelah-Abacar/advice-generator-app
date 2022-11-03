@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* Primary */
+  --Light-Cyan: #cee3e9;
+  --Neon-Green: #52ffa8;
+
+  /* Neutral */
+  --Grayish-Blue: #4e5d73;
+  --Dark-Grayish-Blue: #323a49;
+  --Dark-Blue: #1f2632;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Manrope';
+  background-color: var(--Dark-Blue);
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+.container {
+  width: 45rem;
+  min-height: 25rem;
+  background-color: var(--Dark-Grayish-Blue);
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .container {
+    width: 35rem;
+  }
+}
+.advice-container {
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+  text-align: center;
+}
+.container .adviceId {
+  color: var(--Neon-Green);
+  font-size: 1.4rem;
+  font-weight: lighter;
+  letter-spacing: .3rem;
+}
+.container .advice {
+  display: block;
+  color: var(--Light-Cyan);
+  font-size: 2.8rem;
+  margin: 2rem 0;
+}
+.container .divider {
+  width: 100%;
+}
+.divider img {
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .divider img[data-type='mobile'] {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .divider img[data-type='desktop'] {
+    display: none;
+  }
+}
+.container .dice-icon {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--Neon-Green);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: -2rem;
+  transform: translateX(-50%);
+}

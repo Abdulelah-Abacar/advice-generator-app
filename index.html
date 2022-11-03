@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <main class="container">
+      <section class="advice-container">
+        <p class="adviceId"></p>
+        <q class="advice"></q>
+        <div class="divider">
+          <img data-type="desktop" src="images/pattern-divider-desktop.svg" alt="divider-desktop">
+          <img data-type="mobile" src="images/pattern-divider-mobile.svg" alt="divider-mobile">
+        </div>
+        <div class="dice-icon">
+          <img src="images/icon-dice.svg" alt="icon-dice">
+        </div>
+      </section>
+    </main>
+
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Abdulelah Abacar</a>.
+    </div>
+  </body>
+  <script>
+    fetch('https://api.adviceslip.com/advice')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelector('.adviceId').textContent = `ADVICE #${data.slip.id}`;
+        document.querySelector('.advice').textContent = data.slip.advice;
+      })
+  </script>
+
+</html>
